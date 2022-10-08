@@ -1,0 +1,111 @@
+.sidebar {
+    width: 100%;
+    display: flex;
+    position: relative;
+    background-color: white;
+    overflow-y: auto;
+    transition: width .8s ease-in-out;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-toggle {
+    width: 0;
+}
+
+#icon__hide-sidebar {
+    transition: transform 0.8s ease-in-out;
+}
+
+.rotated{
+    transform: rotate(180deg);
+}
+
+.sidebar__content {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 4px;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.location {
+    display: flex;
+}
+
+.location__icon {
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.location__info {
+    flex: 1;
+}
+
+@media only screen and (max-width: 300px) {
+    .container {width: 100%;}
+    .sidebar__search-box button {
+        display: none;
+    }
+    .sidebar__btn-perform {
+        display: block;
+    }
+    .sidebar__btn-perform > * {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .location {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar__btn-proposal button {
+        width: 100%;
+    }
+    .location__image {
+        width: 100%;
+    }
+    .location__image img {
+        width: 100%;
+        height: 10%;
+    }
+}
+  
+@media only screen and (min-width: 300px) {
+    .container {width: 100%;}
+}
+
+@media only screen and (min-width: 600px) {
+    .container {width: 50%;}
+}
+  
+@media only screen and (min-width: 992px) {
+    .container {width: 35%;}
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {width: 25%;}
+}
